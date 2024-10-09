@@ -47,7 +47,7 @@ public class TRanferMoneyTest {
     private  AccountRepository accountRepository;
     @InjectMocks
     private accountService accountService;
-    @DisplayName("HappyMoney")
+    @DisplayName("Happy Money")
     @Test
     public void TransferMoneyHappyFlow(){
 
@@ -84,7 +84,7 @@ public class TRanferMoneyTest {
     public void AccountRecevierNotFound(){
         account sender=new account();
         sender.setSolde(new BigDecimal(10000));
-        sender.setId(1l);
+        sender.setId(1L);
         given(accountRepository.findById(1L)).willReturn(Optional.of(sender));
         given(accountRepository.findById(2L)).willReturn(Optional.empty());
         //end of assumption step
